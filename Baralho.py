@@ -1,18 +1,25 @@
+# O exercício resolvido nesse código é o desse link: https://olimpiada.ic.unicamp.br/pratique/ps/2021/f1/baralho/
+
+"""
+Pensei em possíveis ideias de código e resolvi fazer a solução por funções, as quais são chamadas para verificar, atualizar e mostrar a quantidade de cartas de cada naipe
+do baralho de acordo com a sequência fornecida
+"""
+
 import re
 
-#Quantidade de cartas de um naipe
+#Variáveis que armazenam a quantidade de cartas de cada naipe
 cartasc = 0
 cartase = 0
 cartasu = 0
 cartasp = 0
 
-# Se tem erro em um conjunto de um naipe
+# Variáveis que representam se tem erro (cartas duplicadas) em um conjunto de um naipe
 ec = False
 ee = False
 eu = False
 ep = False
 
-#Adiciona no contador do naipe da carta
+#Função que adiciona no contador do naipe da carta
 def adiciona_naipe_q_foi(carta):
     global cartasc
     global cartase
@@ -27,21 +34,23 @@ def adiciona_naipe_q_foi(carta):
     if carta[2] == "P":
         cartasp+=1
         
-#Ve se um naipe esta completo
+#Função para ver se um naipe esta completo
 def completou(l_cartas):
     if l_cartas==13:
         print(0)
+
+#Recebe os caracteres que descrevem o baralho
 conjunto=input()
 conjunto = re.findall('...', conjunto)
 cartasQForam = []
 
-#Printa se tem erro de um naipe
+#Função que printa se tem erro em um naipe
 def tem_erro(erroNaipe):
     if erroNaipe:
         print("erro")
         return erroNaipe
         
-#Arruma a variavel erro de um naipe
+#Função que coloca que o naipe da carta fornecida tem erro
 def arruma_erro(carta):
     global ec
     global ee
@@ -56,7 +65,7 @@ def arruma_erro(carta):
     if carta[2] == "P":
         ep=True
         
-#Mostra o número de cartas que faltam
+#Função para mostrar o número de cartas que faltam para o naipe estar completo
 def n_que_falta(carta):
     if carta<13:
         print(13-carta)
