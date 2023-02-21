@@ -1,2 +1,2 @@
-# Repositorio para armazenar solucoes de exercicios da OBI
+# Repositório para armazenar soluções de exercícios da OBI
 # Repository to store solutions to OBI exercises
